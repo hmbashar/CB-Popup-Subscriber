@@ -1,0 +1,102 @@
+/* Tablet Layout: 768px. */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+.jcb-popup-container {
+    width: 100%;
+    padding: 100px 20px;
+    transform: translate(0%, 12%);
+}
+
+.jcb-popup-right-content p {
+    font-size: 23px;
+    margin-bottom: 25px;
+    line-height: 38px;
+    font-weight: 400;
+}
+
+
+}
+
+
+
+/* Mobile Layout: 320px. */
+
+@media only screen and (max-width: 767px) {
+
+
+.jcb-popup-container {
+    width: 100%;
+    padding: 70px 10px;
+    transform: translate(0%, 11%);
+}
+.jcb-popup-close a i {
+    font-size: 25px;
+}
+.jcb-popup-container {
+    display: inherit;
+}
+.jcb-popup-left {
+    width: 100%;
+    padding-top: 0;
+}
+.jcb-popup-right {
+    width: 100%;
+}
+.jcb-popup-right-content p {
+    font-size: 17px;
+    margin-bottom: 25px;
+    line-height: 31px;
+}
+.jcb-popup-subscribe-form form input[type=email] {
+    font-size: 17px;
+    padding: 20px 15px;
+}
+.jcb-popup-subscribe-form form input {
+    margin-bottom: 12px;
+}
+.jcb-popup-subscribe-form form input[type=submit] {
+    font-size: 16px;
+        padding: 0px;
+}
+.jcb-popup-subscribe-form h4 {
+    font-size: 18px;
+}
+.jcb-popup-subscribe-form h4 a {
+    padding: 5px 9px;
+}
+.jcb-popup-subscribe-form p {
+    margin: 14px;
+    font-size: 15px;
+}
+.jcb-popup-left-text h2 {
+    font-size: 53px;
+}
+.jcb-popup-left-text {
+    margin-right: 0;
+}
+
+
+
+
+
+
+
+
+
+}
+
+
+
+/* Wide Mobile Layout: 480px. */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+.jcb-popup-left-text h2 {
+    font-size: 74px;
+}
+
+
+}
+
+
