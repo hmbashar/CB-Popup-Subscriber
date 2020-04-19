@@ -42,16 +42,38 @@ function cb_pop_sub_enqueue() {
 add_action('wp_enqueue_scripts', 'cb_pop_sub_enqueue');
 
 
+// CB Popup Sub admin script
+function cb_popup_sub_admin_script() {
+
+	wp_enqueue_script( 'cb-popup-sub-script', CB_POPUP_SUB_URL.'assets/js/admin-custom.js', array('jquery'), 1.0, true );
+}
+add_action( 'admin_enqueue_scripts', 'cb_popup_sub_admin_script' );
+
+
+
 //add field and section
 function cb_popup_subscriber_field_add() {
 	//Add Setting Section
 	add_settings_section( 'cb_popup_sub_section', __('CB Popup Subscriber', 'cbpopup'), 'cb_popup_sub_section', 'cb_popup_sub.php' );
+
+	// Add Field for logo uploader
+	add_settings_field( 'cb_popup_sub_logo', __('Logo', 'cbpopup'), 'cb_popup_sub_logo_fun', 'cb_popup_sub.php', 'cb_popup_sub_section' );
 
 	// Add Fields
 	add_settings_field( 'cb_popup_sub_first_text', __('First Text', 'cbpopup'), 'cb_popup_sub_first_text', 'cb_popup_sub.php', 'cb_popup_sub_section' );
 
 	// Add Field for second text
 	add_settings_field( 'cb_popup_sub_second_text', __('Second Text', 'cbpopup'), 'cb_popup_sub_second_text', 'cb_popup_sub.php', 'cb_popup_sub_section' );
+
+	// Add Field for footer text
+	add_settings_field( 'cb_popup_sub_footer_text', __('Footer Text', 'cbpopup'), 'cb_popup_sub_footer_text', 'cb_popup_sub.php', 'cb_popup_sub_section' );
+
+	// Add Field for footer link text
+	add_settings_field( 'cb_popup_sub_footer_link_text', __('Link Label', 'cbpopup'), 'cb_popup_sub_footer_link_text', 'cb_popup_sub.php', 'cb_popup_sub_section' );
+
+	// Add Field for footer link url
+	add_settings_field( 'cb_popup_sub_footer_link_url', __('Link URL', 'cbpopup'), 'cb_popup_sub_footer_link_url', 'cb_popup_sub.php', 'cb_popup_sub_section' );
+
 
 }
 
@@ -61,14 +83,29 @@ add_action('admin_init', 'cb_popup_subscriber_field_add');
 //Register fields
 function cb_popup_subscriber_field_registered() {
 
+	// Register field for image upload
+	register_setting( 'cb_popup_sub_section', 'cb_popup_sub_logo', array('sanitize_callback' => 'esc_attr'));
+
 	//Register field setting for first text
 	register_setting( 'cb_popup_sub_section', 'cb_popup_sub_first_text', array('sanitize_callback' => 'esc_html') );
 
 	//Register field setting for second text
 	register_setting( 'cb_popup_sub_section', 'cb_popup_sub_second_text', array('sanitize_callback' => 'esc_html') );
 
+	//Register field setting for footer text
+	register_setting( 'cb_popup_sub_section', 'cb_popup_sub_footer_text', array('sanitize_callback' => 'esc_html') );
 
-	}
+
+	//Register field setting for link text
+	register_setting( 'cb_popup_sub_section', 'cb_popup_sub_footer_link_text', array('sanitize_callback' => 'esc_html') );
+
+
+	//Register field setting for link url
+	register_setting( 'cb_popup_sub_section', 'cb_popup_sub_footer_link_url', array('sanitize_callback' => 'esc_url') );
+
+
+
+}
 
 add_action('admin_init', 'cb_popup_subscriber_field_registered');
 

@@ -7,8 +7,17 @@ if ( !defined( 'ABSPATH' ) ) exit;
 
 
 function cb_popup_subscriber_html() {
-	$first_text = get_option('cb_popup_sub_first_text');
-	$second_text = get_option('cb_popup_sub_second_text')
+	$first_text = get_option('cb_popup_sub_first_text'); // get first text
+	$second_text = get_option('cb_popup_sub_second_text'); // get second text
+	$logo_url = esc_attr(get_option('cb_popup_sub_logo')); // get logo url
+	$footer_text = get_option('cb_popup_sub_footer_text'); // get footer text
+	$link_label = get_option('cb_popup_sub_footer_link_text'); // get footer link label	
+	$link_url = get_option('cb_popup_sub_footer_link_url'); // get footer link url
+
+
+
+	// set default value
+	
 	?>
 
     <!-- CB popup style start -->
@@ -23,7 +32,11 @@ function cb_popup_subscriber_html() {
                     <h2>WHAT MATTERS</h2>
                 </div>
                 <div class="jcb-popup-left-logo">
-                    <img src="<?php echo CB_POPUP_SUB_URL; ?>assets/img/popup-logo.jpg" alt="">
+                	<?php if(empty($logo_url)) : ?>
+                    	<img src="<?php echo CB_POPUP_SUB_URL; ?>assets/img/popup-logo.jpg" alt="">
+                    <?php else : ?>
+                    	<img src="<?php echo esc_attr($logo_url); ?>" alt="">
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="jcb-popup-right">
@@ -54,7 +67,11 @@ function cb_popup_subscriber_html() {
 					</div>
 					<!--End mc_embed_signup-->
                    <h4 class="cb-popup-close"><a>No Thanks</a></h4>
-                    <p>By subscribing you agree to our <a href="">privacy policy.</a></p>
+                    <p><?php echo esc_html($footer_text); ?> 
+                    	<?php if(!empty($link_label)) : ?>
+                    		<a href="<?php esc_url($link_url); ?>"><?php echo esc_html($link_label); ?></a>
+                    	<?php endif; ?>
+                    </p>
                 </div>
             </div>
 
