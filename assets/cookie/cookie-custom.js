@@ -14,4 +14,15 @@
 	// }
 	// $('.suga-breaking-news-ticker-area').next('.wpb_text_column.wpb_content_element ').addClass('breaking-news-content-junk-mb');
 
+	$('.jcb-popup-close, .cb-popup-close').on('click',function() {
+		$('.jcb-popup-start').hide();
+	});
+
+	window.onload = function() {
+	    setTimeout(function() {
+	        document.getElementById('jcb-popup-start').style.display = 'block';
+	    }, 1000);
+	}
+
+
 })(jQuery);

@@ -24,63 +24,86 @@ define('CB_POPUP_SUB_PATH', plugin_dir_path(__FILE__));
 //Basic Setting
 function cb_pop_sub_basic_settings() {
 
-	load_plugin_textdomain( 'CBNT', false, CB_NEWS_TICKER_PATH .'lang' );
+	load_plugin_textdomain( 'cbpopup', false, CB_NEWS_TICKER_PATH .'lang' );
 
 }
 add_action('after_setup_theme', 'cb_pop_sub_basic_settings');
 
 function cb_pop_sub_enqueue() {
 
-	wp_enqueue_style( 'cb-news-ticker', CB_POPUP_SUB_URL.'assets/css/style.css');
-	wp_enqueue_style( 'cb-news-ticker-responsive', CB_POPUP_SUB_URL.'assets/css/responsive.css');
+	wp_enqueue_style( 'cb-popup-sub', CB_POPUP_SUB_URL.'assets/css/style.css');
+	wp_enqueue_style( 'cb-popup-sub-responsive', CB_POPUP_SUB_URL.'assets/css/responsive.css');
 
-	wp_enqueue_script( 'cookie', CB_POPUP_SUB_URL. 'jassets/s/cookie/js.cookie.min.js', array('jquery'), 3.0, true );
+	wp_enqueue_script( 'cookie', CB_POPUP_SUB_URL. 'assets/cookie/js.cookie.min.js', array('jquery'), 3.0, true );
 
-	wp_enqueue_script( 'cb-news-ticker-cookie', CB_POPUP_SUB_URL.'assets/js/cookie/cookie-custom.js', array('jquery'), 3.0, true );
+	wp_enqueue_script( 'cb-popup-sub-cookie', CB_POPUP_SUB_URL.'assets/cookie/cookie-custom.js', array('jquery'), 3.0, true );
 	
 }
 add_action('wp_enqueue_scripts', 'cb_pop_sub_enqueue');
 
 
+//add field and section
+function cb_popup_subscriber_field_add() {
+	//Add Setting Section
+	add_settings_section( 'cb_popup_sub_section', __('CB Popup Subscriber', 'cbpopup'), 'cb_popup_sub_section', 'cb_popup_sub.php' );
 
-function cb_popup_subscriber_html() {
-	?>
+	// Add Fields
+	add_settings_field( 'cb_popup_sub_first_text', __('First Text', 'cbpopup'), 'cb_popup_sub_first_text', 'cb_popup_sub.php', 'cb_popup_sub_section' );
 
-    <!-- CB popup style start -->
-    
-    <div class="jcb-popup-start">
-        <div class="jcb-popup-container">
-            <div class="jcb-popup-close">
-                <a href=""><i class="fa fa-times"></i></a>
-            </div>
-            <div class="jcb-popup-left">
-                <div class="jcb-popup-left-text">
-                    <h2>WHAT MATTERS</h2>
-                </div>
-                <div class="jcb-popup-left-logo">
-                    <img src="<?php echo CB_POPUP_SUB_URL; ?>assets/img/popup-logo.jpg" alt="">
-                </div>
-            </div>
-            <div class="jcb-popup-right">
-                <div class="jcb-popup-right-content">
-                    <p>Sing up for CNN <strong> What Matters</strong> Newsletter</p>
-                    <p>Every day we summarize What matters and deliver it straight to your inbox</p>
-                </div>
-                <div class="jcb-popup-subscribe-form">
-                    <form action="">
-                        <input type="email" placeholder="Email address">
-                        <input type="submit" value="Sign Me Up">
-                    </form>
-                   <h4><a href=""> No Thanks </a></h4>
-                    <p>By subscribing you agree to our <a href="">privacy policy.</a></p>
-                </div>
-            </div>
+	// Add Field for second text
+	add_settings_field( 'cb_popup_sub_second_text', __('Second Text', 'cbpopup'), 'cb_popup_sub_second_text', 'cb_popup_sub.php', 'cb_popup_sub_section' );
 
-        </div>
-    </div>
-
-
-	<?php 
 }
 
-add_action('wp_head', 'cb_popup_subscriber_html');
+add_action('admin_init', 'cb_popup_subscriber_field_add');
+
+
+//Register fields
+function cb_popup_subscriber_field_registered() {
+
+	//Register field setting for first text
+	register_setting( 'cb_popup_sub_section', 'cb_popup_sub_first_text', array('sanitize_callback' => 'esc_html') );
+
+	//Register field setting for second text
+	register_setting( 'cb_popup_sub_section', 'cb_popup_sub_second_text', array('sanitize_callback' => 'esc_html') );
+
+
+	}
+
+add_action('admin_init', 'cb_popup_subscriber_field_registered');
+
+function cb_popup_sub_section() {
+	printf('%s You can manage your popup subscriber settings %s', '<p class="description">', '</p>' );
+}
+
+
+// Create Admin Menu
+function cb_popup_sub_admin_menu() {
+	// Add Sub menu
+	add_submenu_page( 'options-general.php', __('CB Popup Sub Page Title', 'cbpopup'), __('CB Popup', 'cbpopup'), 'manage_options', 'cb_popup_sub.php', 'cb_popup_sub_admin_fun' );
+
+}
+
+add_action( 'admin_menu','cb_popup_sub_admin_menu');
+
+
+// Admin Menu register
+function cb_popup_sub_admin_fun() {
+	?>
+	
+	<form action="options.php" method="POST">
+		<?php 
+			do_settings_sections( 'cb_popup_sub.php' );
+			settings_fields( 'cb_popup_sub_section' );
+			submit_button(); 
+		?>
+	</form>
+
+<?php 
+}
+
+
+// Get Register Fields Functions
+require_once(CB_POPUP_SUB_PATH . 'inc/fields.php');
+//Get HTML Output
+require_once(CB_POPUP_SUB_PATH . 'inc/html.php');

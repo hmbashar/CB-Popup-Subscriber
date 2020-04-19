@@ -1,5 +1,5 @@
 .jcb-popup-start{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -26,6 +26,7 @@
     position: absolute;
     top: 5px;
     right: 10px;
+    cursor: pointer;
 }
 .jcb-popup-left-text {
     display: none !IMPORTANT;
@@ -98,3 +99,6 @@
     font-weight: 900;
     margin: 0;
 }
+
+.jcb-popup-start{display: none;}
+.cb-popup-close{cursor: pointer;}
