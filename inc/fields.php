@@ -8,8 +8,9 @@ function cb_popup_sub_logo_fun() {
 		$logo_url = esc_attr(get_option('cb_popup_sub_logo'));
 	?>		
 	<div id="cb_popup_sub_logo_upload">Upload Logo</div>
-	<input type="hidden" name="cb_popup_sub_logo" id="cb_popup_sub_logo" value="<?php echo $logo_url; ?>">		
-	<div style="width:100%;height:auto;" id="cb_pop_sub_logo_preview"></div>
+	<input type="hidden" name="cb_popup_sub_logo" id="cb_popup_sub_logo" value="<?php echo $logo_url; ?>">
+	
+	<div id="cb_pop_sub_logo_preview"></div>
 
 	<?php
 }

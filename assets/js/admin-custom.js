@@ -30,9 +30,8 @@ var frame;
 			var attachment=frame.state().get('selection').first().toJSON();
 			
 			//$('#cb_popup_logo_id').val(attachment.id);
-			$('#cb_popup_sub_logo').val(attachment.sizes.thumbnail.url);
-
-			$('#cb_pop_sub_logo_preview').html(`<img src='${attachment.sizes.thumbnail.url}' />`);
+			$('#cb_popup_sub_logo').val(attachment.sizes.full.url);			
+			$('#cb_pop_sub_logo_preview').html(`<img src='${attachment.sizes.full.url}' />`);
 		});
 
 		// open uploader

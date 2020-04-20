@@ -175,14 +175,31 @@ add_action( 'admin_menu','cb_popup_sub_admin_menu');
 // Admin Menu register
 function cb_popup_sub_admin_fun() {
 	?>
-	
-	<form action="options.php" method="POST">
-		<?php 
-			do_settings_sections( 'cb_popup_sub.php' );
-			settings_fields( 'cb_popup_sub_section' );
-			submit_button(); 
-		?>
-	</form>
+	<div class="cb-popup-sub-admin-area clearfix">
+		<div class="cb-popup-sub-left">
+			<form action="options.php" method="POST">
+				<?php 
+					do_settings_sections( 'cb_popup_sub.php' );
+					settings_fields( 'cb_popup_sub_section' );
+					submit_button(); 
+				?>
+			</form>
+		</div>
+		<div class="cb-popup-sub-right">
+			<h2>Developer Information</h2>
+			<div class="cb-popup-right-content">
+				<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fdeveloperbashar%2F&tabs=timeline&width=340&height=350&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=299918363797650" width="340" height="350" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+				<p>Developed By <a href="https://facebook.com/hmbashar" target="_blank">Md Abul Bashar</a></p>
+				<h3>You May need my another plugins.</h3>
+				<ul>
+					<li><a href="https://wordpress.org/plugins/cb-change-mail-sender/" target="_blank"> CB Change Mail Sender</a></li>
+					<li><a href="https://wordpress.org/plugins/cb-facebook-like-box/" target="_blank">CB Social Like Box</a></li>
+					<li><a href="https://wordpress.org/plugins/wp-feedburner-email-subscriber/" target="_blank">Feedburner Email Subscriber</a></li>
+					<li><a href="https://profiles.wordpress.org/hmbashar/#content-plugins" target="_blank"><strong>And More</strong></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
 
 <?php 
 }

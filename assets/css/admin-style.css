@@ -7,3 +7,14 @@
     color: #333;
     cursor: pointer;
 }
+.cb-popup-sub-admin-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#cb_pop_sub_logo_preview {
+    max-width: 150px;
+height: auto;
+}
+
+#cb_pop_sub_logo_preview img {max-width: 100%;}
