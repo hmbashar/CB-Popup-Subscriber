@@ -13,8 +13,8 @@
     width: 75%;
     margin: 0 auto;
     position: relative;
-    padding: 150px 100px;
-    transform: translate(0%, 17%);
+    padding: 100px 100px;
+    transform: translate(0%, 11%);
 }
 .jcb-popup-left{
     width: 49%;
@@ -102,3 +102,4 @@
 
 .jcb-popup-start{display: none;}
 .cb-popup-close{cursor: pointer;}
+.cb_popup_sub_logo_upload{width:10px;}

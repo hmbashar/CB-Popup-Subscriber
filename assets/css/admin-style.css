@@ -1,0 +1,9 @@
+#cb_popup_sub_logo_upload {
+    padding: 10px;
+    border: 1px solid #ddd;
+    display: inline-block;
+    margin-bottom: 3px;
+    border-radius: 3px;
+    color: #333;
+    cursor: pointer;
+}

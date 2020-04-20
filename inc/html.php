@@ -13,11 +13,14 @@ function cb_popup_subscriber_html() {
 	$footer_text = get_option('cb_popup_sub_footer_text'); // get footer text
 	$link_label = get_option('cb_popup_sub_footer_link_text'); // get footer link label	
 	$link_url = get_option('cb_popup_sub_footer_link_url'); // get footer link url
+	$submit_text = get_option('cb_popup_sub_submit_button'); // get submit button label
+	$no_thanks = get_option('cb_popup_sub_no_thanks'); // get submit no thanks label
 
 
 
 	// set default value
-	
+	$submit_text = $submit_text ? $submit_text : 'Subscribe';
+	$no_thanks = $no_thanks ? $no_thanks : 'No Thanks';
 	?>
 
     <!-- CB popup style start -->
@@ -60,13 +63,13 @@ function cb_popup_subscriber_html() {
 								</div>
 
 								<div class="clear">
-									<input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+									<input type="submit" value="<?php echo esc_attr($submit_text); ?>" name="subscribe" id="mc-embedded-subscribe" class="button">
 								</div>
 							</div>
 						</form>
 					</div>
 					<!--End mc_embed_signup-->
-                   <h4 class="cb-popup-close"><a>No Thanks</a></h4>
+                   <h4 class="cb-popup-close"><a><?php echo esc_html($no_thanks); ?></a></h4>
                     <p><?php echo esc_html($footer_text); ?> 
                     	<?php if(!empty($link_label)) : ?>
                     		<a href="<?php esc_url($link_url); ?>"><?php echo esc_html($link_label); ?></a>
