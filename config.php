@@ -24,7 +24,7 @@ define('CB_POPUP_SUB_PATH', plugin_dir_path(__FILE__));
 //Basic Setting
 function cb_pop_sub_basic_settings() {
 
-	load_plugin_textdomain( 'cbpopup', false, CB_NEWS_TICKER_PATH .'lang' );
+	load_plugin_textdomain( 'cbpopup', false, CB_POPUP_SUB_PATH .'lang' );
 
 }
 add_action('after_setup_theme', 'cb_pop_sub_basic_settings');
