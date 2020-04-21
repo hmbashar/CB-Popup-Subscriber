@@ -36,7 +36,10 @@
 }
 .jcb-popup-close a i {
     color: #fff;
-    font-size: 36px;
+    font-size: 45px;
+    font-style: normal;
+    font-family: monospace;
+    line-height: 45px;
 }
 .jcb-popup-right-content {}
 
@@ -51,17 +54,20 @@
 .jcb-popup-subscribe-form form input {
     margin-bottom: 18px;
 }
-.jcb-popup-subscribe-form form input[type=email]{
+.jcb-popup-subscribe-form form input[type=email] {
     font-size: 24px;
     padding: 28px 20px;
+    height: 40px;
+    width: 100%;
 }
-.jcb-popup-subscribe-form form input[type=submit]{
+.jcb-popup-subscribe-form form input[type=submit] {
     width: 100%;
     height: auto;
     padding: 10px;
     font-size: 22px;
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 400;
+    background: #1e73be;
 }
 .jcb-popup-subscribe-form button a {
     width: 100%;

@@ -9,11 +9,46 @@
 }
 
 .jcb-popup-right-content p {
-    font-size: 23px;
-    margin-bottom: 25px;
-    line-height: 38px;
+    font-size: 20px;
+    margin-bottom: 14px;
+    line-height: 36px;
     font-weight: 400;
 }
+.jcb-popup-left {
+    width: 40%;
+    padding-top: 60px;
+}
+.jcb-popup-right {
+    width: 57%;
+    margin: 0 auto;
+}
+.jcb-popup-left-logo {
+    width: 90%;
+    margin: 0 auto;
+}
+.jcb-popup-subscribe-form {
+    margin-top: 25px;
+}
+.jcb-popup-subscribe-form h4 a {
+    padding: 10px 10px;
+    font-size: 18px;
+}
+.jcb-popup-subscribe-form p {
+    margin: 10px;
+    font-size: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
@@ -24,7 +59,10 @@
 
 @media only screen and (max-width: 767px) {
 
-
+.jcb-popup-left-logo {
+    width: 75%;
+    margin: 0 auto;
+}
 .jcb-popup-container {
     width: 100%;
     padding: 70px 10px;
@@ -50,24 +88,25 @@
 }
 .jcb-popup-subscribe-form form input[type=email] {
     font-size: 17px;
-    padding: 20px 15px;
+    padding: 23px 15px;
 }
 .jcb-popup-subscribe-form form input {
     margin-bottom: 12px;
 }
 .jcb-popup-subscribe-form form input[type=submit] {
     font-size: 16px;
-        padding: 0px;
+    padding:14px;
 }
 .jcb-popup-subscribe-form h4 {
-    font-size: 18px;
+    font-size: 15px;
+    padding: 5px;
 }
 .jcb-popup-subscribe-form h4 a {
     padding: 5px 9px;
 }
 .jcb-popup-subscribe-form p {
-    margin: 14px;
-    font-size: 15px;
+    margin: 8px 0px 0px 0px;
+    font-size: 14px;
 }
 .jcb-popup-left-text h2 {
     font-size: 53px;
@@ -75,9 +114,17 @@
 .jcb-popup-left-text {
     margin-right: 0;
 }
-
-
-
+.jcb-popup-right-content {
+    text-align: center;
+}
+.jcb-popup-right-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 28px;
+}
+.jcb-popup-subscribe-form {
+    margin-top: 30px;
+}
 
 
 
@@ -95,6 +142,29 @@
 .jcb-popup-left-text h2 {
     font-size: 74px;
 }
+.jcb-popup-close a i {
+    font-size: 35px;
+}
+.jcb-popup-container {
+    padding: 70px 20px;
+}
+.jcb-popup-subscribe-form form input[type=email] {
+    font-size: 18px;
+}
+.jcb-popup-subscribe-form p {
+    font-size: 17px;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
