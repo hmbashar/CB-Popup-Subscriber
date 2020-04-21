@@ -28,7 +28,7 @@ function cb_popup_subscriber_html() {
     <div class="jcb-popup-start" id="jcb-popup-start">
         <div class="jcb-popup-container">
             <div class="jcb-popup-close">
-                <a><i class="fa fa-times"></i></a>
+                <a><i>x</i></a>
             </div>
             <div class="jcb-popup-left">
                 <div class="jcb-popup-left-text">
