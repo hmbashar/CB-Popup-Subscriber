@@ -2,7 +2,7 @@
 
 
 	var CbPopupSubClose = Cookies.get('cb_popup_sub_close') // => 'value'	
-
+	//convert string to integer
 	var CbCookieExpired = parseInt(cb_popup_dynamic_script.cookie_expired);
 
 	if(CbPopupSubClose == 'cb-popup-closed') {

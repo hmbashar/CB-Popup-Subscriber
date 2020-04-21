@@ -119,7 +119,7 @@ function cb_popup_sub_popup_show() {
 // text field for show popup
 function cb_popup_sub_cookie_expired() {
 	$id = 'cb_popup_sub_cookie_expired';
-	$value = get_option($id);	
+	$value = esc_html(get_option($id));	
 	
 	$value = $value ? $value : 7;
 	printf('<input type="text" id="%s" class="regular-text" name="%s" value="%s" placeholder="button label">', $id, $id, $value);

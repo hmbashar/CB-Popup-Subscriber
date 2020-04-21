@@ -43,7 +43,7 @@ function cb_pop_sub_enqueue() {
 	$popup_show = esc_attr(get_option('cb_popup_sub_popup_show'));
 	$popup_show = $popup_show ? $popup_show : 10000;
 
-	$popup_cookie = get_option('cb_popup_sub_cookie_expired');
+	$popup_cookie = esc_html(get_option('cb_popup_sub_cookie_expired'));
 	$popup_cookie_expired = $popup_cookie ? $popup_cookie : 7 ;
 
 	wp_localize_script( 'cb-popup-sub-cookie', 'cb_popup_dynamic_script', array(
