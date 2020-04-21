@@ -2,6 +2,9 @@
 
 
 	var CbPopupSubClose = Cookies.get('cb_popup_sub_close') // => 'value'	
+
+	var CbCookieExpired = parseInt(cb_popup_dynamic_script.cookie_expired);
+
 	if(CbPopupSubClose == 'cb-popup-closed') {
 		$('.jcb-popup-start').hide();
 	}else {
@@ -13,7 +16,7 @@
 		}
 
 		$('.jcb-popup-close, .cb-popup-close').on('click',function() {
-			Cookies.set('cb_popup_sub_close', 'cb-popup-closed', { expires: cb_popup_dynamic_script.cookie_expired });
+			Cookies.set('cb_popup_sub_close', 'cb-popup-closed', { expires:CbCookieExpired});
 			$('.jcb-popup-start').hide();
 		});
 
