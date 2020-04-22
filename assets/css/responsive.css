@@ -4,15 +4,26 @@
 
 .jcb-popup-container {
     width: 100%;
-    padding: 100px 20px;
-    transform: translate(0%, 12%);
+    padding: 55px 22px;
+    transform: translate(0%, 2%);
 }
-
-.jcb-popup-right-content p {
+.jcb-popup-subscribe-form form input[type=email] {
     font-size: 20px;
-    margin-bottom: 14px;
-    line-height: 36px;
+    padding: 0px 20px;
+    width: 100%;
+    height: 40px;
+}
+.jcb-popup-right-content p {
+    font-size: 18px;
+    margin-bottom: 0;
+    line-height: 30px;
     font-weight: 400;
+}
+.jcb-popup-subscribe-form form input[type=submit] {
+    width: 100%;
+    height: auto;
+    padding: 7px;
+    font-size: 20px;
 }
 .jcb-popup-left {
     width: 40%;
@@ -37,7 +48,11 @@
     margin: 10px;
     font-size: 18px;
 }
-
+.admin-bar .jcb-popup-container {
+    width: 100%;
+    padding: 55px 22px;
+    transform: translate(0%, 7%);
+}
 
 
 
@@ -60,16 +75,17 @@
 @media only screen and (max-width: 767px) {
 
 .jcb-popup-left-logo {
-    width: 75%;
+    width: 55%;
     margin: 0 auto;
 }
 .jcb-popup-container {
     width: 100%;
-    padding: 70px 10px;
-    transform: translate(0%, 11%);
+    padding: 45px 10px;
+    transform: translate(0%, 0%);
 }
 .jcb-popup-close a i {
     font-size: 25px;
+    line-height: 30px;
 }
 .jcb-popup-container {
     display: inherit;
@@ -87,15 +103,15 @@
     line-height: 31px;
 }
 .jcb-popup-subscribe-form form input[type=email] {
-    font-size: 17px;
-    padding: 23px 15px;
+    font-size: 16px;
+    padding: 20px 15px;
 }
 .jcb-popup-subscribe-form form input {
     margin-bottom: 12px;
 }
 .jcb-popup-subscribe-form form input[type=submit] {
     font-size: 16px;
-    padding:14px;
+    padding: 10px 15px;
 }
 .jcb-popup-subscribe-form h4 {
     font-size: 15px;
@@ -118,9 +134,10 @@
     text-align: center;
 }
 .jcb-popup-right-content p {
-    font-size: 16px;
-    margin-bottom: 20px;
-    line-height: 28px;
+    font-size: 15px;
+    margin-bottom: 0;
+    line-height: 25px;
+    margin-top: 10px;
 }
 .jcb-popup-subscribe-form {
     margin-top: 30px;
@@ -145,8 +162,12 @@
 .jcb-popup-close a i {
     font-size: 35px;
 }
+.jcb-popup-left-logo {
+    width: 44%;
+    margin: 0 auto;
+}
 .jcb-popup-container {
-    padding: 70px 20px;
+    padding: 30px 20px;
 }
 .jcb-popup-subscribe-form form input[type=email] {
     font-size: 18px;
