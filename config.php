@@ -104,6 +104,9 @@ function cb_popup_subscriber_field_add() {
 	// Add Field for popup width
 	add_settings_field( 'cb_popup_sub_cookie_expired', __('Cookie Expired', 'cbpopup'), 'cb_popup_sub_cookie_expired', 'cb_popup_sub.php', 'cb_popup_sub_section' );
 
+	// Add Field for form action
+	add_settings_field( 'cb_popup_sub_form_action', __('Form Action URL', 'cbpopup'), 'cb_popup_sub_form_action', 'cb_popup_sub.php', 'cb_popup_sub_section' );
+
 
 }
 
@@ -138,11 +141,11 @@ function cb_popup_subscriber_field_registred() {
 	register_setting( 'cb_popup_sub_section', 'cb_popup_sub_popup_width', array('sanitize_callback' => 'esc_attr') );
 
 
-	//Register field setting popup width
+	//Register field setting submit button
 	register_setting( 'cb_popup_sub_section', 'cb_popup_sub_submit_button', array('sanitize_callback' => 'esc_attr') );
 
 
-	//Register field setting popup width
+	//Register field setting no thanks
 	register_setting( 'cb_popup_sub_section', 'cb_popup_sub_no_thanks', array('sanitize_callback' => 'esc_html') );
 
 	//Register field setting popup show
@@ -151,6 +154,9 @@ function cb_popup_subscriber_field_registred() {
 
 	//Register field setting cookie expired
 	register_setting( 'cb_popup_sub_section', 'cb_popup_sub_cookie_expired', array('sanitize_callback' => 'esc_html') );
+
+	//Register field setting form action
+	register_setting( 'cb_popup_sub_section', 'cb_popup_sub_form_action', array('sanitize_callback' => 'esc_url') );
 
 
 

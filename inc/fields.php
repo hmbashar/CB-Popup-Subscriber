@@ -122,8 +122,21 @@ function cb_popup_sub_cookie_expired() {
 	$value = esc_html(get_option($id));	
 	
 	$value = $value ? $value : 7;
-	printf('<input type="text" id="%s" class="regular-text" name="%s" value="%s" placeholder="button label">', $id, $id, $value);
+	printf('<input type="text" id="%s" class="regular-text" name="%s" value="%s" placeholder="How many days?">', $id, $id, $value);
 	
 	printf('%s Input number for how many days save cookie after click close the popup, currently save for %s days  %s', '<p class="description">', $value,'</p>' );
+}
+
+
+
+// text field for form action url
+function cb_popup_sub_form_action() {
+	$id = 'cb_popup_sub_form_action';
+	$value = esc_html(get_option($id));	
+	
+	$value = $value ? $value : NULL;
+	printf('<input type="text" id="%s" class="regular-text" name="%s" value="%s" placeholder="MailChimp Form Action URL">', $id, $id, $value);
+	
+	printf('%s Input your Mailchimp Form Action URL, make your default form from your MailChimp account then copy only action URL, URL look like this https://prnt.sc/s3zayx  %s', '<p class="description">','</p>' );
 }
 

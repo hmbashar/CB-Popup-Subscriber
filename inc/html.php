@@ -15,6 +15,8 @@ function cb_popup_subscriber_html() {
 	$link_url = get_option('cb_popup_sub_footer_link_url'); // get footer link url
 	$submit_text = get_option('cb_popup_sub_submit_button'); // get submit button label
 	$no_thanks = get_option('cb_popup_sub_no_thanks'); // get submit no thanks label
+    $form_a_url = get_option('cb_popup_sub_form_action'); // get submit no thanks label
+
 
 
 
@@ -50,7 +52,7 @@ function cb_popup_subscriber_html() {
                 <div class="jcb-popup-subscribe-form">
 					<!-- Begin Mailchimp Signup Form -->
 					<div id="mc_embed_signup">
-						<form action="https://oaklandtelegraph.us4.list-manage.com/subscribe/post?u=7ca07699c33869c9924fb8968&amp;id=7b75cc4b32" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+						<form action="<?php echo esc_attr($form_a_url);?>" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 							<div id="mc_embed_signup_scroll">								
 								<div class="mc-field-group">
 									<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Enter Your Email Address">
